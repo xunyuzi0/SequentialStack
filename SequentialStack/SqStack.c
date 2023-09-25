@@ -1,3 +1,6 @@
+﻿#define STACK_INIT_SIZE 100//顺序栈初始化分配空间大小
+#define STACK_INCREMENT 10//栈满时分配的空间增量
+
 ﻿#include<stdio.h>
 #include<stdbool.h>
 #include<malloc.h>
@@ -14,9 +17,14 @@ typedef struct SqStack {
 }Stack,*PStack;
 
 
-bool InitStack();
-bool ClearStack();
-
+bool InitStack(PStack);
+bool ClearStack(PStack);
+bool IsEmpty(PStack);
+int StackLength(PStack);
+bool GetTop(PStack);
+bool pop(PStack, int*);
+bool push(PStack, int);
+bool StackTraverseShow(PStack);
 
 
 int main() {
